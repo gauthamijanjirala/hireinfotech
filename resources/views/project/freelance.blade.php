@@ -34,7 +34,7 @@
             <div class="row gy-3 gy-md-4 overflow-hidden">
               <div class="col-12">
                 <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="name" id="title" placeholder="name" >
+                <input type="text" class="form-control" name="name" id="name" placeholder="name" >
                 @error('name')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror

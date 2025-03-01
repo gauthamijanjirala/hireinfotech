@@ -1652,14 +1652,16 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                 </svg></a>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        @foreach($data as $value)
+
                             <div
                                 class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
                                 <div class="p-6">
                                     <div class="flex flex-col items-center text-center mb-4"><img
                                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=256&amp;h=256&amp;q=80"
                                             alt="Freelancer" class="w-20 h-20 rounded-full object-cover mb-3">
-                                        <h3 class="text-lg font-semibold text-gray-900">{{ $value->title  }}</h3>
-                                        <p class="text-indigo-600 font-medium">{{ $value->description }}</p>
+                                        <h3 class="text-lg font-semibold text-gray-900">{{ $value->name  }}</h3>
+                                        <p class="text-indigo-600 font-medium">{{ $value->title }}</p>
                                         <div class="flex items-center mt-1"><svg xmlns="http://www.w3.org/2000/svg"
                                                 width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -1713,186 +1715,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                         class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">View
                                         Profile</button></div>
                             </div>
-                            <div
-                                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
-                                <div class="p-6">
-                                    <div class="flex flex-col items-center text-center mb-4"><img
-                                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=256&amp;h=256&amp;q=80"
-                                            alt="Freelancer" class="w-20 h-20 rounded-full object-cover mb-3">
-                                        <h3 class="text-lg font-semibold text-gray-900">Michael Chen</h3>
-                                        <p class="text-indigo-600 font-medium">Full Stack Developer</p>
-                                        <div class="flex items-center mt-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-gray-300">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><span class="text-sm text-gray-500 ml-1">4.8</span></div>
-                                    </div>
-                                    <div class="flex flex-wrap gap-2 justify-center mb-4"><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">React</span><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-gray-700 font-medium">$55/hr</p>
-                                        <p class="text-gray-500 text-sm">95% Job Success</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-50 px-6 py-3 border-t border-gray-200 flex justify-center"><button
-                                        class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">View
-                                        Profile</button></div>
-                            </div>
-                            <div
-                                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
-                                <div class="p-6">
-                                    <div class="flex flex-col items-center text-center mb-4"><img
-                                            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=256&amp;h=256&amp;q=80"
-                                            alt="Freelancer" class="w-20 h-20 rounded-full object-cover mb-3">
-                                        <h3 class="text-lg font-semibold text-gray-900">Emily Rodriguez</h3>
-                                        <p class="text-indigo-600 font-medium">Backend Developer</p>
-                                        <div class="flex items-center mt-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><span class="text-sm text-gray-500 ml-1">4.9</span></div>
-                                    </div>
-                                    <div class="flex flex-wrap gap-2 justify-center mb-4"><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">API</span><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">PostgreSQL</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-gray-700 font-medium">$50/hr</p>
-                                        <p class="text-gray-500 text-sm">97% Job Success</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-50 px-6 py-3 border-t border-gray-200 flex justify-center"><button
-                                        class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">View
-                                        Profile</button></div>
-                            </div>
-                            <div
-                                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
-                                <div class="p-6">
-                                    <div class="flex flex-col items-center text-center mb-4"><img
-                                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=256&amp;h=256&amp;q=80"
-                                            alt="Freelancer" class="w-20 h-20 rounded-full object-cover mb-3">
-                                        <h3 class="text-lg font-semibold text-gray-900">David Wilson</h3>
-                                        <p class="text-indigo-600 font-medium">Laravel Security Expert</p>
-                                        <div class="flex items-center mt-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-yellow-400">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-star h-4 w-4 text-gray-300">
-                                                <polygon
-                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                </polygon>
-                                            </svg><span class="text-sm text-gray-500 ml-1">4.7</span></div>
-                                    </div>
-                                    <div class="flex flex-wrap gap-2 justify-center mb-4"><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Security</span><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Payment</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <p class="text-gray-700 font-medium">$60/hr</p>
-                                        <p class="text-gray-500 text-sm">96% Job Success</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-50 px-6 py-3 border-t border-gray-200 flex justify-center"><button
-                                        class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">View
-                                        Profile</button></div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>
