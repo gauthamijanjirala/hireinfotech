@@ -55,14 +55,14 @@
                                 <div class="card-body p-md-5 mx-md-4">
 
                                     <div class="text-center">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                                            style="width: 185px;" alt="logo">
-                                        <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                                        <img src="{{ asset('login_ui/img/HIRE (1).png') }}"style="width: 185px;" alt="logo">
+                                            <!-- style="width: 185px;" alt="logo"> -->
+                                        <h4 class="mt-1 mb-5 pb-1">We are HireInfoTech</h4>
                                     </div>
 
                                     <form action="{{ route('storeregistration') }}" method="post">
                                         @csrf
-                                        <p>Please login to your account</p>
+                                        <p>Please Register to your account</p>
 
                                         <div class="form-outline ">
                                             <input type="text" id="form2Example11" class="form-control" name="full_name"

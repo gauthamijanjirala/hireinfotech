@@ -24,25 +24,25 @@
           <div class="row">
             <div class="col-12">
               <div class="mb-5">
-                <h2 class="h3">Post Project</h2>
+                <h2 class="h3">Freelancer</h2>
                 <!-- <h3 class="fs-6 fw-normal text-secondary m-0">Enter your details to register</h3> -->
               </div>
             </div>
           </div>
-          <form action="{{ route('post.store') }}" method="post">
+          <form action="{{ route('freelance.store') }}" method="post">
             @csrf
             <div class="row gy-3 gy-md-4 overflow-hidden">
               <div class="col-12">
-                <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="Title" >
-                @error('title')
+                <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="name" id="title" placeholder="name" >
+                @error('name')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
               </div>
               <div class="col-12">
-                <label for="description" class="form-label">Descrition<span class="text-danger">*</span></label>
-                <input type="textarea" class="form-control" name="description" id="description" placeholder="Description" >
-                @error('description')
+                <label for="title" class="form-label">Title<span class="text-danger">*</span></label>
+                <input type="textarea" class="form-control" name="title" id="title" placeholder="title" >
+                @error('title')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
 
@@ -56,9 +56,9 @@
 
               </div>
               <div class="col-12">
-                <label for="amount" class="form-label">Amount<span class="text-danger">*</span></label>
-                <input type="number" class="form-control" name="amount" id="amount" value="" >
-                @error('amount')
+                <label for="hour" class="form-label">Hour<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="hour" id="hour" value="" >
+                @error('hour')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
 
@@ -73,7 +73,7 @@
               </div>
               <div class="col-12">
                 <div class="d-grid">
-                  <button class="btn bsb-btn-xl btn-primary" type="submit"> Post</button>
+                  <button class="btn bsb-btn-xl btn-primary" type="submit"> freelancer</button>
                 </div>
               </div>
             </div>

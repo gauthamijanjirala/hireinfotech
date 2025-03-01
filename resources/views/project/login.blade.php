@@ -13,7 +13,7 @@
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
   <!-- MDB -->
-  <link rel="stylesheet" href="{{ asset('login_ui/css/bootstrap-login-form.min.css') }}" />
+  <link rel="stylesheet" href="css/bootstrap-login-form.min.css" />
 </head>
 
 <body>
@@ -53,35 +53,25 @@
                 <div class="card-body p-md-5 mx-md-4">
 
                   <div class="text-center">
-                  <img src="{{ asset('login_ui/img/HIRE (1).png') }}"style="width: 185px;" alt="logo">
-                    <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo"> -->
-                    <h4 class="mt-1 mb-5 pb-1">We are HireInfoTech</h4>
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo">
+                    <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
                   </div>
 
-                  <form action="{{ route('storelogin') }}" method="post">
-                    @csrf
-                  <p>Please login to your account</p>
+                  <form>
+                    <p>Please login to your account</p>
 
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example11" class="form-control" name="email" placeholder="Phone number or email address"/>
+                      <input type="email" id="form2Example11" class="form-control" placeholder="Phone number or email address"/>
                       <label class="form-label" for="form2Example11">Username</label>
                     </div>
-                    @error('email')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-
 
                     <div class="form-outline mb-4">
-                      <input type="password" id="form2Example22"name="password" class="form-control" />
-                      <label class="form-label"   for="form2Example22">Password</label>
+                      <input type="password" id="form2Example22" class="form-control" />
+                      <label class="form-label" for="form2Example22">Password</label>
                     </div>
-                    @error('password')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-
 
                     <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log in</button>
+                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log in</button>
                       <a class="text-muted" href="#!">Forgot password?</a>
                     </div>
 
@@ -109,7 +99,7 @@
   <!-- End your project here-->
 
   <!-- MDB -->
-  <script type="text/javascript" src="{{ asset('login_ui/js/mdb.min.js') }}"></script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
   <script type="text/javascript"></script>
 </body>

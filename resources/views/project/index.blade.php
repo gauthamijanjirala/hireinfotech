@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite + React + TS</title>
+    <title>Hire InfoTech </title>
     <style type="text/css" data-vite-dev-id="/home/project/src/index.css">
         *,
         ::before,
@@ -1521,12 +1521,18 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                             <p class="text-xl mb-8 text-indigo-100">Find expert freelancers for your projects with our
                                 secure escrow payment system. Quality work guaranteed.</p>
                             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                                <a href="{{ route('post_project') }}" class="bg-white text-indigo-700 font-medium py-3 px-6 rounded-lg shadow-md hover:bg-indigo-50 transition">Post a Project
+                                <a href="{{ route('post_project') }}"
+                                    class="bg-white text-indigo-700 font-medium py-3 px-6 rounded-lg shadow-md hover:bg-indigo-50 transition">
+                                    Post a Project
                                 </a>
-                                <button
+                                <a href="{{ route('freelance_project') }}"
+                                    class="bg-white text-indigo-700 font-medium py-3 px-6 rounded-lg shadow-md hover:bg-indigo-50 transition">
+                                    Find Freelancers
+                                </a>
+                                <!-- <button
                                     class="bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg shadow-md border border-indigo-500 hover:bg-indigo-800 transition">Find
                                     Freelancers
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </div>
@@ -1570,61 +1576,64 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             @foreach($data as $value)
-                            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
-                                <div class="p-6">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <h3 class="text-lg font-semibold text-gray-900">{{ $value->title  }}</h3><span
-                                            class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Featured</span>
-                                    </div>
-                                    <p class="text-gray-600 mb-4 line-clamp-3">{{ $value->description }}</p>
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        @foreach(explode(',',$value->tag)  as $tagValue)
-                                        <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ $tagValue }}</span> 
-                                        @endforeach
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                class="lucide lucide-dollar-sign h-4 w-4 text-gray-500 mr-1">
-                                                <line x1="12" x2="12" y1="2" y2="22"></line>
-                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                            </svg><span class="text-gray-700 font-medium">{{ $value->amount }}</span></div>
-                                        <div class="flex items-center text-gray-500 text-sm"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-clock h-4 w-4 mr-1">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <polyline points="12 6 12 12 16 14"></polyline>
-                                            </svg><span>{{ $value->created_at }}</span></div>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-50 px-6 py-3 border-t border-gray-200">
-                                    <div class="flex justify-between items-center">
-                                        <div class="flex items-center">
-                                            <div
-                                                class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-medium">
-                                                TC</div>
-                                            <div class="ml-2">
-                                                <div class="text-sm font-medium text-gray-900">TechCorp Inc.</div>
-                                                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
-                                                        width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        class="lucide lucide-star h-3 w-3 text-yellow-400">
-                                                        <polygon
-                                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                        </polygon>
-                                                    </svg><span class="text-xs text-gray-500 ml-1">4.9 (43
-                                                        reviews)</span></div>
+                                <div
+                                    class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition">
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <h3 class="text-lg font-semibold text-gray-900">{{ $value->title  }}</h3><span
+                                                class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Featured</span>
+                                        </div>
+                                        <p class="text-gray-600 mb-4 line-clamp-3">{{ $value->description }}</p>
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            @foreach(explode(',', $value->tag) as $tagValue)
+                                                <span
+                                                    class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ $tagValue }}</span>
+                                            @endforeach
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="lucide lucide-dollar-sign h-4 w-4 text-gray-500 mr-1">
+                                                    <line x1="12" x2="12" y1="2" y2="22"></line>
+                                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                                </svg><span class="text-gray-700 font-medium">{{ $value->amount }}</span>
                                             </div>
-                                        </div><button
-                                            class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">Apply</button>
+                                            <div class="flex items-center text-gray-500 text-sm"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-clock h-4 w-4 mr-1">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                </svg><span>{{ $value->created_at }}</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 px-6 py-3 border-t border-gray-200">
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-medium">
+                                                    TC</div>
+                                                <div class="ml-2">
+                                                    <div class="text-sm font-medium text-gray-900">TechCorp Inc.</div>
+                                                    <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                                            width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="lucide lucide-star h-3 w-3 text-yellow-400">
+                                                            <polygon
+                                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                            </polygon>
+                                                        </svg><span class="text-xs text-gray-500 ml-1">4.9 (43
+                                                            reviews)</span></div>
+                                                </div>
+                                            </div><button
+                                                class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">Apply</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -1649,8 +1658,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                     <div class="flex flex-col items-center text-center mb-4"><img
                                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=256&amp;h=256&amp;q=80"
                                             alt="Freelancer" class="w-20 h-20 rounded-full object-cover mb-3">
-                                        <h3 class="text-lg font-semibold text-gray-900">Sarah Johnson</h3>
-                                        <p class="text-indigo-600 font-medium">Laravel Expert</p>
+                                        <h3 class="text-lg font-semibold text-gray-900">{{ $value->title  }}</h3>
+                                        <p class="text-indigo-600 font-medium">{{ $value->description }}</p>
                                         <div class="flex items-center mt-1"><svg xmlns="http://www.w3.org/2000/svg"
                                                 width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -1689,13 +1698,14 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                                 </polygon>
                                             </svg><span class="text-sm text-gray-500 ml-1">5.0</span></div>
                                     </div>
-                                    <div class="flex flex-wrap gap-2 justify-center mb-4"><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span><span
-                                            class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Vue.js</span>
+                                    <div class="flex flex-wrap gap-2 justify-center mb-4">
+                                        @foreach(explode(',', $value->tag) as $tagValue)
+                                            <span
+                                                class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">{{ $tagValue }}</span>
+                                        @endforeach
                                     </div>
                                     <div class="text-center">
-                                        <p class="text-gray-700 font-medium">$45/hr</p>
+                                        <p class="text-gray-700 font-medium">{{ $value->hour }}</p>
                                         <p class="text-gray-500 text-sm">98% Job Success</p>
                                     </div>
                                 </div>
@@ -1902,7 +1912,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                         stroke-linejoin="round" class="lucide lucide-briefcase h-8 w-8 text-indigo-600">
                                         <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
                                         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                                    </svg></div>
+                                    </svg>
+                                </div>
                                 <h3 class="text-xl font-bold text-gray-900 mb-3">1. Post Your Project</h3>
                                 <p class="text-gray-600">Describe your project in detail, set your budget, and specify
                                     the skills required for the job.</p>
@@ -1917,7 +1928,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                         <circle cx="9" cy="7" r="4"></circle>
                                         <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                    </svg></div>
+                                    </svg>
+                                </div>
                                 <h3 class="text-xl font-bold text-gray-900 mb-3">2. Choose a Freelancer</h3>
                                 <p class="text-gray-600">Review proposals, check profiles, ratings, and portfolios to
                                     find the perfect match for your project.</p>
@@ -1931,7 +1943,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                         <path
                                             d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
                                         </path>
-                                    </svg></div>
+                                    </svg>
+                                </div>
                                 <h3 class="text-xl font-bold text-gray-900 mb-3">3. payment</h3>
                                 <p class="text-gray-600">Funds are held in escrow until you approve the work, ensuring
                                     security for both parties.</p>
@@ -1957,8 +1970,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                             class="lucide lucide-lock h-6 w-6 text-indigo-600">
                                             <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
                                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                        </svg></div>
-                                    <h3 class="text-lg font-semibold text-gray-900">Secure Payments</h3>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-gray-900"><a href="{{ route('razorpay.payment') }}">Secure Payments</a></h3>
                                 </div>
                                 <p class="text-gray-600">All transactions are protected with bank-level security and our
                                     escrow system.</p>
@@ -1974,7 +1988,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                             <path
                                                 d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
                                             </path>
-                                        </svg></div>
+                                        </svg>
+                                    </div>
                                     <h3 class="text-lg font-semibold text-gray-900">Fraud Protection</h3>
                                 </div>
                                 <p class="text-gray-600">Advanced algorithms and manual reviews to detect and prevent
@@ -1990,7 +2005,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                             class="lucide lucide-check-circle h-6 w-6 text-indigo-600">
                                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                             <path d="m9 11 3 3L22 4"></path>
-                                        </svg></div>
+                                        </svg>
+                                    </div>
                                     <h3 class="text-lg font-semibold text-gray-900">Verified Freelancers</h3>
                                 </div>
                                 <p class="text-gray-600">All freelancers undergo identity verification and skill
@@ -2006,7 +2022,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                             class="lucide lucide-award h-6 w-6 text-indigo-600">
                                             <circle cx="12" cy="8" r="6"></circle>
                                             <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
-                                        </svg></div>
+                                        </svg>
+                                    </div>
                                     <h3 class="text-lg font-semibold text-gray-900">Dispute Resolution</h3>
                                 </div>
                                 <p class="text-gray-600">Fair and transparent process to resolve any issues between

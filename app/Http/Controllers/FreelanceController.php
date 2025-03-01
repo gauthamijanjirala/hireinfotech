@@ -1,35 +1,44 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\freelance;
 use Illuminate\Http\Request;
-use App\Models\Project;
-class ProjectController extends Controller
+
+class FreelanceController extends Controller
 {
+    // public function freelanceproject(){
+    //     $data = freelance::get();
+    //     return view('project.index',compact('data')); 
+
+    // }
     public function index(){
-        $data = Project::get();
+        $data = freelance::get();
        return view('project.index',compact('data'));
     }
-    
-    public function postProject(){
-        return view('project.post');
+
+    public function freelanceProject(){
+        return view('project.freelance');
 
     }
+
+
     public function store(Request $request)
     {
         // dd($request->all());
         // Validate the request
         $request->validate([
+            'name' => 'required|string',
             'title' => 'required|string',
-            'description' => 'required|string',
             'tag' => 'required|string',
-            'amount' => 'required',
+            'hour' => 'required',
         ]);
                 // Store project
-            Project::create([
+            freelance::create([
+                'name' => $request->name,
                 'title' => $request->title,
-                'description' => $request->description,
                 'tag' => $request->tag,
-                'amount' => $request->amount
+                'hour' => $request->hour
             ]);
             // dd('afyhjlfryh');
             return redirect('/')->with('success', 'Project created successfully!');

@@ -1,0 +1,4 @@
+git config --global user.name "gauthamijanjirala"
+git config --global user.email "gauthamijanjirala14@gmail.com"
+git commit -m "Initial commit"
+ilr
