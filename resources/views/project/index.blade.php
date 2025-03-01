@@ -1795,7 +1795,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                         </svg>
                                     </div>
-                                    <h3 class="text-lg font-semibold text-gray-900"><a href="{{ route('razorpay.payment') }}">Secure Payments</a></h3>
+                                    <h3 class="text-lg font-semibold text-gray-900"><a href="#">Secure Payments</a></h3>
                                 </div>
                                 <p class="text-gray-600">All transactions are protected with bank-level security and our
                                     escrow system.</p>

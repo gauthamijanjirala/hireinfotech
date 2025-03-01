@@ -15,9 +15,10 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('razorpay_payment_id')->unique();
-            $table->decimal('amount', 10, 2);
-            $table->string('status')->default('Pending');
+            $table->string('name');
+            $table->string('card_number');
+            $table->string('expiry');
+            $table->string('cvv');
             $table->timestamps();
         });
     }

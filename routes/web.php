@@ -38,18 +38,11 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegistrationController::class, 'register'])->name('storeregistration');
 
-// Route::get('/razorpay', [RazorpayController::class, 'createOrder']);
-// Route::post('/razorpay/payment', [RazorpayController::class, 'makePayment']);
-// Route::post('/razorpay/success', [RazorpayController::class, 'paymentSuccess']);
 // Show Payment Page
-Route::get('/razorpay', [RazorpayController::class, 'createOrder'])->name('razorpay.payment');
-
-// Create Razorpay Order
-Route::post('/razorpay/payment', [RazorpayController::class, 'makePayment'])->name('razorpay.create.payment');
-Route::post('razorpay-payment', [RazorpayController::class, 'store'])->name('razorpay.payment.store');
+// Route::get('/payment', [RazorpayController::class, 'showForm'])->name('razorpay.payment');
+// Route::get('/process-payment', [RazorpayController::class, 'processPayment'])->name('razorpay.payment');
+// Route::post('/payment/store', [RazorpayController::class, 'store'])->name('payment.store');
 
 
 
-// Verify Payment and Store Data
-Route::post('/razorpay/success', [RazorpayController::class, 'paymentSuccess'])->name('razorpay.payment.success');
 

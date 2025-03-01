@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
     use HasFactory;
-    protected $fillable = ['razorpay_payment_id', 'amount', 'status'];
+    protected $fillable = ['name', 'card_number', 'expiry', 'cvv'];
 
 }

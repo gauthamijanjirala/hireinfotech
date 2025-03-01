@@ -1,134 +1,47 @@
 <!DOCTYPE html>
-
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+<html lang="en">
 <head>
-
-    <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Laravel - Razorpay Payment Gateway Integration</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-
 <body>
+    <div class="container mt-5">
+        <h2 class="text-center">Payment</h2>
 
-    <div id="app">
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
 
-        <main class="py-4">
+        @if(session('error'))
+            <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
 
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-6 offset-3 col-md-offset-6">
-
-  
-
-                        @if($message = Session::get('error'))
-
-                            <div class="alert alert-danger alert-dismissible fade in" role="alert">
-
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-
-                                    <span aria-hidden="true">×</span>
-
-                                </button>
-
-                                <strong>Error!</strong> {{ $message }}
-
-                            </div>
-
-                        @endif
-
-  
-
-                        @if($message = Session::get('success'))
-
-                            <div class="alert alert-success alert-dismissible fade {{ Session::has('success') ? 'show' : 'in' }}" role="alert">
-
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-
-                                    <span aria-hidden="true">×</span>
-
-                                </button>
-
-                                <strong>Success!</strong> {{ $message }}
-
-                            </div>
-
-                        @endif
-
-  
-
-                        <div class="card card-default">
-
-                            <div class="card-header">
-
-                                Laravel - Razorpay Payment Gateway Integration
-
-                            </div>
-
-  
-
-                            <div class="card-body text-center">
-
-                                <form action="{{ route('razorpay.payment.store') }}" method="POST" >
-
-                                    @csrf
-
-                                    <script src="https://checkout.razorpay.com/v1/checkout.js"
-
-                                            data-key="{{ env('RAZORPAY_KEY') }}"
-
-                                            data-amount="1000"
-
-                                            data-buttontext="Pay 10 INR"
-
-                                            data-name="ItSolutionStuff.com"
-
-                                            data-description="Rozerpay"
-
-                                            data-image="https://www.itsolutionstuff.com/frontTheme/images/logo.png"
-
-                                            data-prefill.name="name"
-
-                                            data-prefill.email="email"
-
-                                            data-theme.color="#ff7529">
-
-                                    </script>
-
-                                </form>
-
-                            </div>
-
-                        </div>
-
-  
-
-                    </div>
-
-                </div>
-
+        <form action="{{ route('payment.store') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
 
-        </main>
+            <div class="mb-3">
+                <label for="card_number" class="form-label">Card Number</label>
+                <input type="text" class="form-control" id="card_number" name="card_number" required>
+            </div>
 
+            <div class="mb-3">
+                <label for="expiry" class="form-label">Expiry Date</label>
+                <input type="month" class="form-control" id="expiry" name="expiry" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input type="text" class="form-control" id="cvv" name="cvv" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Pay Now</button>
+        </form>
     </div>
-
 </body>
-
 </html>
-
-
-
